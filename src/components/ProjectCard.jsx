@@ -19,30 +19,62 @@ const accentMap = {
   },
 };
 
-function Thumb({ accent = 'sky' }) {
+// function Thumb({ accent = 'sky' }) {
+//   const a = accentMap[accent] ?? accentMap.sky;
+
+//   return (
+//     <div className="relative h-44 overflow-hidden">
+//       <div
+//         className="absolute inset-0"
+//         style={{
+//           background: `radial-gradient(700px 220px at 20% 10%, ${a.from}, transparent 60%),
+//                        radial-gradient(600px 220px at 85% 30%, ${a.mid}, transparent 62%),
+//                        linear-gradient(135deg, ${a.to}, white)`,
+//         }}
+//       />
+//       <div className="absolute -top-20 -right-20 h-60 w-60 rotate-12 rounded-full bg-white/50 blur-2xl opacity-60" />
+
+//       <div className="absolute inset-0 p-5">
+//         <div className="h-3 w-24 rounded-full bg-white/70" />
+//         <div className="mt-3 grid grid-cols-3 gap-2">
+//           <div className="h-16 rounded-xl bg-white/70" />
+//           <div className="h-16 rounded-xl bg-white/55" />
+//           <div className="h-16 rounded-xl bg-white/40" />
+//         </div>
+//         <div className="mt-3 h-10 rounded-xl bg-white/55" />
+//       </div>
+//     </div>
+//   );
+// }
+function Thumb({ accent = 'sky', src, alt }) {
   const a = accentMap[accent] ?? accentMap.sky;
 
   return (
-    <div className="relative h-44 overflow-hidden">
+    <div className="relative h-50 sm:h-52 md:h-55 overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
-          background: `radial-gradient(700px 220px at 20% 10%, ${a.from}, transparent 60%),
-                       radial-gradient(600px 220px at 85% 30%, ${a.mid}, transparent 62%),
+          background: `radial-gradient(700px 260px at 20% 10%, ${a.from}, transparent 60%),
+                       radial-gradient(600px 260px at 85% 30%, ${a.mid}, transparent 62%),
                        linear-gradient(135deg, ${a.to}, white)`,
         }}
       />
-      <div className="absolute -top-20 -right-20 h-60 w-60 rotate-12 rounded-full bg-white/50 blur-2xl opacity-60" />
 
-      <div className="absolute inset-0 p-5">
-        <div className="h-3 w-24 rounded-full bg-white/70" />
-        <div className="mt-3 grid grid-cols-3 gap-2">
-          <div className="h-16 rounded-xl bg-white/70" />
-          <div className="h-16 rounded-xl bg-white/55" />
-          <div className="h-16 rounded-xl bg-white/40" />
-        </div>
-        <div className="mt-3 h-10 rounded-xl bg-white/55" />
-      </div>
+      {/* image */}
+      {src && (
+        <img
+          src={src}
+          alt={alt || 'Project thumbnail'}
+          className="absolute inset-0 h-full w-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+          }}
+        />
+      )}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-white/5 to-transparent" />
+
+      <div className="absolute -top-24 -right-24 h-64 w-64 rotate-12 rounded-full bg-white/40 blur-2xl opacity-40" />
     </div>
   );
 }
@@ -54,6 +86,7 @@ export default function ProjectCard({
   tech,
   featured,
   accent,
+  thumb,
 }) {
   return (
     <div
@@ -73,7 +106,7 @@ export default function ProjectCard({
         <div className="absolute -inset-10 bg-[radial-gradient(circle,rgba(56,189,248,0.20),transparent_55%)]" />
       </div>
 
-      <Thumb accent={accent} />
+      <Thumb accent={accent} src={thumb} alt={title} />
 
       <div className="relative p-6">
         <div className="flex items-start justify-between gap-3">

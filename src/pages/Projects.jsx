@@ -20,6 +20,8 @@ export default function Projects() {
               tagline={p.tagline}
               slug={p.slug}
               tech={p.tech}
+              accent={p.accent}
+              thumb={p.thumb}
             />
           ))}
         </div>

@@ -127,7 +127,7 @@ export default function Header() {
               >
                 <Github size={18} />
               </a>
-              <Button href="/cv.pdf">Download CV</Button>
+              <Button href="/NguyenQuynhMaiSE_CV.pdf">Download CV</Button>
             </div>
 
             {/* Mobile */}

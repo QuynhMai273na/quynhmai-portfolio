@@ -445,17 +445,6 @@ export default function ProjectDetail() {
                 screenshots={project.screenshots}
                 onOpen={openAt}
               />
-              <p className="mt-4 text-sm text-[var(--color-subtext)]">
-                Put images in{' '}
-                <span className="font-medium text-[var(--color-text)]">
-                  /public/images
-                </span>{' '}
-                and update paths in{' '}
-                <span className="font-medium text-[var(--color-text)]">
-                  projects.js
-                </span>
-                .
-              </p>
             </Block>
 
             <Block id="next" title="Next Improvements">

@@ -232,7 +232,6 @@ export default function Home() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="py-12 md:py-20 bg-white/70 backdrop-blur border-y border-[var(--color-border)]"
       >
-        {/* <section className="py-12 md:py-20"> */}
         <Container>
           <SectionTitle
             title="Selected Projects"
@@ -246,6 +245,9 @@ export default function Home() {
                 tagline={p.tagline}
                 slug={p.slug}
                 tech={p.tech}
+                featured={p.featured}
+                accent={p.accent}
+                thumb={p.thumb}
               />
             ))}
           </div>

@@ -3,6 +3,8 @@ export const projects = [
   {
     slug: 'tradiherb',
     title: 'TradiHerb',
+    thumb: '/images/tradiherb/01.png',
+
     tagline:
       'AI-powered knowledge management system for Vietnamese Traditional Medicine with semantic search (RAG).',
     overview:
@@ -12,16 +14,7 @@ export const projects = [
 
     timeline: '2025',
     role: 'Frontend / Full-stack (AI-integrated) Developer',
-    tech: [
-      'React',
-      'JavaScript',
-      'Tailwind',
-      'NestJS',
-      'Prisma',
-      'MySQL',
-      'RAG',
-      'Vector DB',
-    ],
+    tech: ['React', 'JavaScript', 'Express', 'MySQL', 'RAG', 'Vector DB'],
 
     metrics: [
       { label: 'Scope', value: 'Graduation Thesis' },
@@ -66,6 +59,7 @@ export const projects = [
       { title: 'Articles', src: '/images/tradiherb/03.png' },
       { title: 'Admin / Content Management', src: '/images/tradiherb/04.png' },
       { title: 'AI Q&A', src: '/images/tradiherb/05.png' },
+      { title: 'Profile Page', src: '/images/tradiherb/06.png' },
     ],
 
     next: [
@@ -78,7 +72,8 @@ export const projects = [
 
   {
     slug: 'events-hub',
-    title: 'M-Tech Event Hub',
+    title: 'Event Hub',
+    thumb: '/images/events-hub/01.png',
     tagline:
       'Internal event management platform built as an internship training project using a real production stack.',
     overview:
@@ -154,6 +149,7 @@ export const projects = [
   {
     slug: 'love-gift',
     title: 'Love Gift',
+    thumb: '/images/love-gift/01.png',
     tagline:
       'A matchmaking + wishlist sharing platform with task-based rewards to gamify gift exchanges.',
     overview:
